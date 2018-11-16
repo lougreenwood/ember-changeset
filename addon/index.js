@@ -8,24 +8,34 @@ import objectWithout from 'ember-changeset/utils/object-without';
 import includes from 'ember-changeset/utils/includes';
 import take from 'ember-changeset/utils/take';
 import isChangeset, { CHANGESET } from 'ember-changeset/utils/is-changeset';
-
-const {
-  Object: EmberObject,
-  RSVP: { all, resolve },
-  computed: { not, readOnly },
-  Evented,
-  A: emberArray,
-  assert,
-  get,
+import EmberObject from '@ember/object';
+import Evented from '@ember/object/evented';
+import {
+  A as emberArray,
   isArray,
+} from '@ember/array';
+import {
+  all,
+  resolve,
+} from 'rsvp';
+import { assert } from '@ember/debug';
+import {
   isEmpty,
   isEqual,
   isNone,
   isPresent,
+} from '@ember/utils';
+import {
+  not,
+  readOnly,
+} from '@ember/object/computed';
+import {
+  get,
   set,
-  setProperties,
-  typeOf
-} = Ember;
+} from '@ember/object';
+import { typeOf } from '@ember/utils';
+import { setProperties } from '@ember/object';
+
 const { keys } = Object;
 const CONTENT = '_content';
 const CHANGES = '_changes';
